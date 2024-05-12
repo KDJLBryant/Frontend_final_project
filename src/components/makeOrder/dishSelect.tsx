@@ -44,7 +44,7 @@ const DishSelect = () => {
           </button>
         </div>
       )}
-      {order?.dish && <p>{order.dish.name}</p>}
+      {order?.dish && <p>Selected Dish: {order.dish.name}</p>}
     </div>
   );
 };

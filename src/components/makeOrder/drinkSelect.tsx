@@ -1,11 +1,15 @@
 import { useOrderContext } from "@/context/newOrderContext";
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Drink, Order } from "../../../../orders-api/src/types";
 import api from "@/api/api";
 import mapper from "@/utils/mapper";
 import { getRandomNumber } from "@/utils/getRandomNumber";
 
-const DrinkSelect = () => {
+const DrinkSelect = ({
+  setConfirmedChoices,
+}: {
+  setConfirmedChoices: Dispatch<SetStateAction<boolean>>;
+}) => {
   const { order, setOrder } = useOrderContext();
   const [drinksDisplay, setDrinksDisplay] = useState<Drink[] | null>(null);
   const [selectedDrinks, setSelectedDrinks] = useState<Drink[]>([]);
@@ -18,6 +22,7 @@ const DrinkSelect = () => {
       };
       setOrder(updatedOrder);
     }
+    setConfirmedChoices(true);
   };
 
   const fetchOrderedDrinks = () => {
@@ -68,10 +73,12 @@ const DrinkSelect = () => {
   };
   useEffect(() => {
     setDrinksDisplay(null);
-    setSelectedDrinks([]);
     fetchOrderedDrinks();
     fetchDrinksDisplay();
   }, [order?.dish]);
+  useEffect(() => {
+    setConfirmedChoices(false);
+  }, [selectedDrinks]);
 
   return (
     order?.dish.name && (
@@ -90,7 +97,7 @@ const DrinkSelect = () => {
         ))}
         {selectedDrinks && (
           <button className="border" onClick={updateDrinkOrder}>
-            Choose Drinks
+            Confirm choices
           </button>
         )}
         {selectedDrinks?.map((drink) => (

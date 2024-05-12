@@ -2,17 +2,7 @@ import { Order } from "../../../orders-api/src/types";
 
 export const emptyOrder: Order = {
   id: 0,
-  drinks: [
-    {
-      brewer: "",
-      category: "",
-      description: "",
-      id: "",
-      imageSource: "",
-      name: "",
-      price: 0,
-    },
-  ],
+  drinks: [],
   email: "",
   count: 0,
   date: new Date(),
