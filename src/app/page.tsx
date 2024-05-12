@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import { useRef } from "react";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/newOrderContext";
 import PageRouter from "@/components/PageRouter";
 import { isValidEmail } from "@/utils/isValidEmail";
 import api from "@/api/api";
