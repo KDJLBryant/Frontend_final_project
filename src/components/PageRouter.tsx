@@ -10,7 +10,7 @@ const PageRouter = ({
   const router = useRouter();
 
   return (
-    <button className="border" onClick={() => router.push(route)}>
+    <button className="custom-nav-button" onClick={() => router.push(route)}>
       {buttonText}
     </button>
   );

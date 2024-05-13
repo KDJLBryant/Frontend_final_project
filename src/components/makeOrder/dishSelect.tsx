@@ -36,6 +36,7 @@ const DishSelect = () => {
       <button className="border" onClick={fetchDishDisplay}>
         New
       </button>
+      <img src={dishDisplay?.imageSource} alt="Dish Image" />
       {dishDisplay && (
         <div>
           <p>{dishDisplay.name}</p>

@@ -1,6 +1,6 @@
 import { useOrderContext } from "@/context/newOrderContext";
 import { isValidEmail } from "@/utils/isValidEmail";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Order } from "../../../../orders-api/src/types";
 import { emptyOrder } from "@/utils/emptyOrder";
 import api from "@/api/api";
@@ -8,6 +8,7 @@ import api from "@/api/api";
 const EmailSearch = () => {
   const emailInput = useRef<HTMLInputElement>(null);
   const { setOrder, order } = useOrderContext();
+  const [searchMessage, setSearchMessage] = useState("");
 
   const searchForEmail = async () => {
     const userInput = emailInput.current?.value;
@@ -19,6 +20,7 @@ const EmailSearch = () => {
         if (foundOrder.email) {
           // Store found order
           setOrder(foundOrder);
+          setSearchMessage("User found");
         } else {
           // Make new order if new email
           const newOrder: Order = {
@@ -26,6 +28,7 @@ const EmailSearch = () => {
             email: userInput,
           };
           setOrder(newOrder);
+          setSearchMessage("Create new order");
         }
       }
     }
@@ -38,10 +41,22 @@ const EmailSearch = () => {
   }, [order]);
 
   return (
-    <div>
-      <input type="text" placeholder="jondoe@gamil.com" ref={emailInput} />
-      <button onClick={searchForEmail}>Search</button>
-      {!isValidEmail(emailInput.current?.value) && <p>Enter valid email</p>}
+    <div className="email-search-component">
+      <div className="flex">
+        <input
+          className="custom-email-input"
+          type="text"
+          placeholder="jondoe@gamil.com"
+          ref={emailInput}
+        />
+        <button className="custom-search-button" onClick={searchForEmail}>
+          Search
+        </button>
+      </div>
+      {emailInput.current && !isValidEmail(emailInput.current.value) && (
+        <p className="custom-warn-msg">Enter valid email</p>
+      )}
+      {searchMessage && <p className="custom-search-msg">{searchMessage}</p>}
     </div>
   );
 };

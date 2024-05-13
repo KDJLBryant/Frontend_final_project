@@ -1,9 +1,8 @@
 "use client";
 import PageRouter from "@/components/PageRouter";
-import { useOrderContext } from "@/context/newOrderContext";
 import DrinkSelect from "@/components/makeOrder/drinkSelect";
 import DishSelect from "@/components/makeOrder/dishSelect";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   return (
@@ -15,7 +14,6 @@ const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
 };
 
 const MakeOrder = () => {
-  const { order } = useOrderContext();
   const [confirmedChoices, setConfirmedChoices] = useState(false);
 
   return (

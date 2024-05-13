@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-nav-button {
+  @apply border rounded px-4 font-bold bg-blue-500 hover:bg-blue-600;
+}
+
+.custom-search-button {
+  @apply border rounded px-4 font-bold bg-blue-500 hover:bg-blue-600;
+}
+
+.custom-search-msg {
+  @apply px-4 py-2 bg-opacity-30 bg-green-500;
+}
+
+.custom-email-input {
+  @apply border hover:border-slate-500 p-2 bg-slate-300;
+}
+
+.custom-warn-msg {
+  @apply px-4 py-2 text-center bg-opacity-30 bg-red-400;
+}
+
+.email-search-component {
+  @apply flex flex-col items-center bg-slate-500;
+}
+
+.home-page-sm {
+  @apply flex flex-col justify-around;
+}

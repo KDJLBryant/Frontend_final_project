@@ -54,7 +54,7 @@ const DrinkSelect = ({
       for (let i = 0; i <= 5; i++) {
         const randomDrink = mapper.mapDrink(
           fetchedDrinks.drinks[
-            getRandomNumber(0, fetchedDrinks.drinks.length - 1)
+          getRandomNumber(0, fetchedDrinks.drinks.length - 1)
           ]
         );
 
@@ -93,6 +93,7 @@ const DrinkSelect = ({
             >
               Select
             </button>
+            <img src={drink.imageSource} alt="Drink Image" />
           </div>
         ))}
         {selectedDrinks && (
