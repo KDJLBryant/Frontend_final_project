@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useOrderContext } from "@/context/newOrderContext";
 import PageRouter from '@/components/PageRouter';
+import Dashboard from '@/components/dashboard';
 
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
@@ -55,6 +56,7 @@ const BookOrder = () => {
 
   return (
     <div>
+      <Dashboard currentPageId={3} />
       <BookTime setConfirmedChoices={setConfirmedChoices} />
       <PageNavigator confirmedChoices={confirmedChoices} />
     </div>

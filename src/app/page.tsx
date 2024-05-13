@@ -4,6 +4,7 @@ import PageRouter from "@/components/PageRouter";
 import EmailSearch from "@/components/home/emailSearch";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 import SLIDES from "@/components/ImageCarousel/ImageCarouselData";
+import Dashboard from "@/components/dashboard";
 
 const PageNavigator = () => {
   const { order } = useOrderContext();
@@ -14,6 +15,7 @@ const PageNavigator = () => {
 export default function Home() {
   return (
     <div className="home-page-sm">
+      <Dashboard currentPageId={1} />
       <ImageCarousel data={SLIDES} />
       <EmailSearch />
       <PageNavigator />
