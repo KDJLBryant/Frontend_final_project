@@ -1,23 +1,23 @@
-import { StaticImageData } from "next/image";
-import football from "../../assets/Football.jpg";
-import iceHockey from "../../assets/Ice_Hockey.jpg";
-import tennis from "../../assets/Tennis.jpg";
+import foodOne from "../../assets/food1.jpg";
+import foodTwo from "../../assets/food2.jpg";
+import foodThree from "../../assets/food3.jpg";
+
 
 const SLIDES = [
   {
     id: 0,
-    src: football,
-    alt: "Football",
+    src: foodOne,
+    alt: "foodOne",
   },
   {
     id: 1,
-    src: iceHockey,
-    alt: "IceHockey",
+    src: foodTwo,
+    alt: "foodTwo",
   },
   {
     id: 2,
-    src: tennis,
-    alt: "Tennis",
+    src: foodThree,
+    alt: "foodThree",
   },
 ];
 

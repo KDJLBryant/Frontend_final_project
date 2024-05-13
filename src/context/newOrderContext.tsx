@@ -10,14 +10,14 @@ import { Order } from "../../../orders-api/src/types";
 
 export type OrderContextType = {
   order: Order | null;
-  setOrder: (order: Order | ((prevOrder: Order | null) => Order)) => void;
+  setOrder: (order: Order | null) => void;
 };
 
 const LOCAL_STORAGE_KEY = "order";
 
 const OrderContext = createContext<OrderContextType>({
   order: null,
-  setOrder: () => {},
+  setOrder: () => { },
 });
 
 export const useOrderContext = () => useContext(OrderContext);

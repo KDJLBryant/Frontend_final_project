@@ -54,7 +54,7 @@ const ImageCarousel = (slides: ImageCarouselProps) => {
         (slide, index) =>
           index === imageIndex && (
             <Image
-              className="lg:size-1/2"
+              className="carousel-image"
               src={slide.src}
               alt={slide.alt}
               key={index}
