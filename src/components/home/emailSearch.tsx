@@ -47,13 +47,15 @@ const EmailSearch = () => {
     <div className="email-search-component">
       <div>
         <p className="header-card">Search for, or make new booking!</p>
+        <label className="input-label" id="email">Enter email: </label>
         <input
           className="email-input"
+          id="email"
           type="text"
           placeholder="jondoe@gamil.com"
           ref={emailInput}
         />
-        <button className="search-button" onClick={searchForEmail}>
+        <button className="custom-button" onClick={searchForEmail}>
           Search
         </button>
       </div>

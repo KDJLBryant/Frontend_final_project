@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { OrderContextProvider } from "@/context/newOrderContext";
 import Dashboard from "@/components/dashboard";
+import PageHeader from "@/components/pageHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <PageHeader />
         <OrderContextProvider>
           {children}
         </OrderContextProvider>
