@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   return (
-    <div>
+    <div className="page-navigator-component">
       <PageRouter route="/" buttonText="Back" />
       {confirmedChoices && <PageRouter route="/bookOrder" buttonText="Next" />}
     </div>
@@ -22,12 +22,8 @@ const MakeOrder = () => {
     // change when designing
     <div>
       <Dashboard currentPageId={2} />
-      <div className="bg-blue-500">
-        <DishSelect />
-      </div>
-      <div className="bg-red-500">
-        <DrinkSelect setConfirmedChoices={setConfirmedChoices} />
-      </div>
+      <DishSelect />
+      <DrinkSelect setConfirmedChoices={setConfirmedChoices} />
       <PageNavigator confirmedChoices={confirmedChoices} />
     </div>
   );

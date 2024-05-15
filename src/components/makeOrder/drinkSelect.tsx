@@ -1,4 +1,4 @@
-import { useOrderContext } from "@/context/newOrderContext";
+import { useOrderContext } from "@/context/OrderContext";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Drink, Order } from "../../../../orders-api/src/types";
 import api from "@/api/api";
@@ -82,36 +82,42 @@ const DrinkSelect = ({
 
   return (
     order?.dish.name && (
-      <div>
+      <div className="drink-select-component">
         <p>Select Drink</p>
         {drinksDisplay?.map((drink) => (
-          <div className="flex" key={drink.id}>
+          <div className="drink-item-card" key={drink.id}>
             <p>{drink.name}</p>
+            <img
+              className="drink-image"
+              src={drink.imageSource}
+              alt="Drink Image"
+            />
             <button
-              className="border mx-2"
+              className="custom-button"
               onClick={() => addToSelectedDrinks(drink)}
             >
               Select
             </button>
-            <img src={drink.imageSource} alt="Drink Image" />
           </div>
         ))}
-        {selectedDrinks && (
-          <button className="border" onClick={updateDrinkOrder}>
-            Confirm choices
-          </button>
-        )}
+        <p className="header-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</p>
         {selectedDrinks?.map((drink) => (
-          <div className="flex bg-green-500">
-            <p>{drink.name}</p>
+          <div className="drink-item-card">
             <button
-              className="border mx-2"
+              className="custom-button"
               onClick={() => removeFromSelectedDrinks(drink)}
             >
               Remove
             </button>
+            <p>{drink.name}</p>
+            <img className="drink-image" src={drink.imageSource} alt="Drink Image"></img>
           </div>
         ))}
+        {selectedDrinks.length > 0 && (
+          <button className="custom-button" onClick={updateDrinkOrder}>
+            Confirm choices
+          </button>
+        )}
       </div>
     )
   );

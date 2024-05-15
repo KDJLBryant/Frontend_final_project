@@ -1,4 +1,4 @@
-import { useOrderContext } from "@/context/newOrderContext";
+import { useOrderContext } from "@/context/OrderContext";
 import { isValidEmail } from "@/utils/isValidEmail";
 import { useEffect, useRef, useState } from "react";
 import { Order } from "../../../../orders-api/src/types";
@@ -32,8 +32,8 @@ const EmailSearch = () => {
         }
       }
     } else {
-      setSuccessMessage("Enter valid email!")
-      setOrder(null)
+      setSuccessMessage("Enter valid email!");
+      setOrder(null);
     }
   };
 
@@ -47,7 +47,9 @@ const EmailSearch = () => {
     <div className="email-search-component">
       <div>
         <p className="header-card">Search for, or make new booking!</p>
-        <label className="input-label" id="email">Enter email: </label>
+        <label className="input-label" id="email">
+          Enter email:{" "}
+        </label>
         <input
           className="email-input"
           id="email"
@@ -59,7 +61,15 @@ const EmailSearch = () => {
           Search
         </button>
       </div>
-      {successMessage && <p className={isValidEmail(emailInput.current?.value) ? "success-msg" : "warn-msg"}>{successMessage}</p>}
+      {successMessage && (
+        <p
+          className={
+            isValidEmail(emailInput.current?.value) ? "success-msg" : "warn-msg"
+          }
+        >
+          {successMessage}
+        </p>
+      )}
     </div>
   );
 };

@@ -2,21 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* General */
+.custom-button {
+  @apply border rounded px-4 py-2 font-bold text-white bg-sky-600 hover:bg-blue-900;
+}
 
 .logo {
   @apply lg:size-1/2
+}
+
+.header-card {
+  @apply rounded-xl text-xl font-bold text-center p-4 my-2 text-white bg-slate-600;
 }
 
 .carousel-image {
   @apply w-full h-full
 }
 
-.custom-button {
-  @apply border rounded px-4 py-2 font-bold bg-blue-500 hover:bg-blue-600;
-}
-
 .success-msg {
   @apply px-4 py-2 bg-opacity-30 bg-green-500;
+}
+
+.page-navigator-component {
+  @apply flex justify-around p-4 bg-slate-600
+}
+
+.item-description-card {
+  @apply rounded-xl p-2 text-sm text-white bg-slate-700
+}
+
+.home-page {
+  @apply flex flex-col justify-around;
+}
+
+/*Email search component*/
+.email-search-component {
+  @apply flex flex-col p-4 items-center bg-slate-500;
 }
 
 .email-input {
@@ -31,10 +52,30 @@
   @apply px-4 py-2 text-center bg-opacity-30 bg-red-400;
 }
 
-.header-card {
-  @apply rounded-xl text-xl font-bold text-center p-4 my-2 text-white bg-slate-600;
+
+/*Drink select component*/
+.drink-select-component {
+  @apply flex flex-col items-center p-4 bg-slate-500
 }
 
+.drink-item-card {
+  @apply flex justify-around rounded-xl items-center my-2 font-bold text-white bg-sky-900
+}
+
+.drink-image {
+  @apply size-1/4 p-2
+}
+
+/*Dish select component*/
+.dish-select-component {
+  @apply p-4 bg-slate-500
+}
+
+.dish-image {
+  @apply p-2
+}
+
+/*Dashboard component*/
 .dashboard {
   @apply flex p-4 text-white bg-slate-600
 }
@@ -49,16 +90,4 @@
 
 .active-page {
   @apply rounded font-bold p-2 text-black bg-red-500
-}
-
-.email-search-component {
-  @apply flex flex-col p-4 items-center bg-slate-500;
-}
-
-.page-navigator-component {
-  @apply flex justify-around p-4 bg-slate-600
-}
-
-.home-page {
-  @apply flex flex-col justify-around;
 }

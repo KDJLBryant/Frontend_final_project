@@ -1,4 +1,4 @@
-import { useOrderContext } from "@/context/newOrderContext";
+import { useOrderContext } from "@/context/OrderContext";
 import { useEffect, useState } from "react";
 import { Dish, Order } from "../../../../orders-api/src/types";
 import api from "@/api/api";
@@ -32,20 +32,36 @@ const DishSelect = () => {
   }, []);
 
   return (
-    <div>
-      <button className="border" onClick={fetchDishDisplay}>
-        New
-      </button>
-      <img src={dishDisplay?.imageSource} alt="Dish Image" />
+    <div className="dish-select-component">
+      <div className="flex flex-col">
+        <button className="custom-button" onClick={fetchDishDisplay}>
+          New
+        </button>
+        <img
+          className="dish-image"
+          src={dishDisplay?.imageSource}
+          alt="Dish Image"
+        />
+        <button className="custom-button" onClick={updateOrderDish}>
+          Select Dish
+        </button>
+      </div>
       {dishDisplay && (
         <div>
-          <p>{dishDisplay.name}</p>
-          <button className="border" onClick={updateOrderDish}>
-            Select Dish
-          </button>
+          <p className="header-card">{dishDisplay.name}</p>
+          <p className="item-description-card">{dishDisplay.description}</p>
         </div>
       )}
-      {order?.dish && <p>Selected Dish: {order.dish.name}</p>}
+      {order?.dish && (
+        <div className="flex items-center header-card">
+          <p>Selected Dish: {order.dish.name}</p>
+          <img
+            className="size-1/4 p-2"
+            src={order.dish.imageSource}
+            alt="Selected Dish"
+          ></img>
+        </div>
+      )}
     </div>
   );
 };

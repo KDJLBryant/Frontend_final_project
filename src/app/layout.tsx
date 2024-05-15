@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { OrderContextProvider } from "@/context/newOrderContext";
+import { OrderContextProvider } from "@/context/OrderContext";
 import Dashboard from "@/components/dashboard";
 import PageHeader from "@/components/pageHeader";
 
