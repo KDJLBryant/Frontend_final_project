@@ -82,43 +82,48 @@ const DrinkSelect = ({
 
   return (
     order?.dish.name && (
-      <div className="drink-select-component">
-        <p>Select Drink</p>
-        {drinksDisplay?.map((drink) => (
-          <div className="drink-item-card" key={drink.id}>
-            <p>{drink.name}</p>
-            <img
-              className="drink-image"
-              src={drink.imageSource}
-              alt="Drink Image"
-            />
-            <button
-              className="custom-button"
-              onClick={() => addToSelectedDrinks(drink)}
-            >
-              Select
+      <>
+        <div className="drinks-display-wrapper">
+          <h1 className="header-card">Select Drink</h1>
+          {drinksDisplay?.map((drink) => (
+            <div className="drink-item-card" key={drink.id}>
+              <p>{drink.name}</p>
+              <img
+                className="drink-image"
+                src={drink.imageSource}
+                alt="Drink Image"
+              />
+              <button
+                className="custom-button"
+                onClick={() => addToSelectedDrinks(drink)}
+              >
+                Select
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="selected-drinks-wrapper">
+          <h1 className="header-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</h1>
+          {selectedDrinks?.map((drink) => (
+            <div className="drink-item-card">
+              <button
+                className="custom-button"
+                onClick={() => removeFromSelectedDrinks(drink)}
+              >
+                Remove
+              </button>
+              <p>{drink.name}</p>
+              <img className="drink-image" src={drink.imageSource} alt="Drink Image"></img>
+            </div>
+          ))}
+          {selectedDrinks.length > 0 && (
+            <button className="custom-button" onClick={updateDrinkOrder}>
+              Confirm choices
             </button>
-          </div>
-        ))}
-        <p className="header-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</p>
-        {selectedDrinks?.map((drink) => (
-          <div className="drink-item-card">
-            <button
-              className="custom-button"
-              onClick={() => removeFromSelectedDrinks(drink)}
-            >
-              Remove
-            </button>
-            <p>{drink.name}</p>
-            <img className="drink-image" src={drink.imageSource} alt="Drink Image"></img>
-          </div>
-        ))}
-        {selectedDrinks.length > 0 && (
-          <button className="custom-button" onClick={updateDrinkOrder}>
-            Confirm choices
-          </button>
-        )}
-      </div>
+          )}
+        </div>
+      </>
     )
   );
 };

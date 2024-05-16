@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/*page-layout*/
+.layout-wrapper {
+  @apply bg-slate-500
+}
+
 /* General */
 .custom-button {
   @apply border rounded px-4 py-2 font-bold text-white bg-sky-600 hover:bg-blue-900;
@@ -20,7 +25,7 @@
 }
 
 .success-msg {
-  @apply px-4 py-2 bg-opacity-30 bg-green-500;
+  @apply px-4 py-2 bg-opacity-30;
 }
 
 .page-navigator-component {
@@ -31,13 +36,11 @@
   @apply rounded-xl p-2 text-sm text-white bg-slate-700
 }
 
-.home-page {
-  @apply flex flex-col justify-around;
-}
+.home-page {}
 
 /*Email search component*/
-.email-search-component {
-  @apply flex flex-col p-4 items-center bg-slate-500;
+.email-search-wrapper {
+  @apply flex flex-col p-4 items-center;
 }
 
 .email-input {
@@ -54,9 +57,9 @@
 
 
 /*Drink select component*/
-.drink-select-component {
-  @apply flex flex-col items-center p-4 bg-slate-500
-}
+.drinks-display-wrapper {}
+
+.selected-drinks-wrapper {}
 
 .drink-item-card {
   @apply flex justify-around rounded-xl items-center my-2 font-bold text-white bg-sky-900
@@ -67,12 +70,20 @@
 }
 
 /*Dish select component*/
-.dish-select-component {
-  @apply p-4 bg-slate-500
+.dish-display-wrapper {
+  @apply flex flex-col p-4
+}
+
+.dish-display-content {
+  @apply flex flex-col
 }
 
 .dish-image {
   @apply p-2
+}
+
+.selected-dish-wrapper {
+  @apply flex flex-col
 }
 
 /*Dashboard component*/

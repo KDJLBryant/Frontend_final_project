@@ -32,37 +32,42 @@ const DishSelect = () => {
   }, []);
 
   return (
-    <div className="dish-select-component">
-      <div className="flex flex-col">
-        <button className="custom-button" onClick={fetchDishDisplay}>
-          New
-        </button>
-        <img
-          className="dish-image"
-          src={dishDisplay?.imageSource}
-          alt="Dish Image"
-        />
+    <>
+      <div className="dish-display-wrapper">
+        <div className="dish-display-content">
+          <button className="custom-button" onClick={fetchDishDisplay}>
+            New
+          </button>
+          <img
+            className="dish-image"
+            src={dishDisplay?.imageSource}
+            alt="Dish Image"
+          />
+        </div>
+        {dishDisplay && (
+          <div className="dish-display-content">
+            <h1 className="header-card">{dishDisplay.name}</h1>
+            <p className="item-description-card">{dishDisplay.description}</p>
+          </div>
+        )}
+      </div>
+
+      <div className="selected-dish-wrapper">
         <button className="custom-button" onClick={updateOrderDish}>
           Select Dish
         </button>
+        {order?.dish && (
+          <div className="flex items-center header-card">
+            <p>Selected Dish: {order.dish.name}</p>
+            <img
+              className="size-1/4 p-2"
+              src={order.dish.imageSource}
+              alt="Selected Dish"
+            ></img>
+          </div>
+        )}
       </div>
-      {dishDisplay && (
-        <div>
-          <p className="header-card">{dishDisplay.name}</p>
-          <p className="item-description-card">{dishDisplay.description}</p>
-        </div>
-      )}
-      {order?.dish && (
-        <div className="flex items-center header-card">
-          <p>Selected Dish: {order.dish.name}</p>
-          <img
-            className="size-1/4 p-2"
-            src={order.dish.imageSource}
-            alt="Selected Dish"
-          ></img>
-        </div>
-      )}
-    </div>
+    </>
   );
 };
 

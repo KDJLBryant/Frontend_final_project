@@ -44,7 +44,7 @@ const EmailSearch = () => {
   }, [order]);
 
   return (
-    <div className="email-search-component">
+    <div className="email-search-wrapper">
       <div>
         <p className="header-card">Search for, or make new booking!</p>
         <label className="input-label" id="email">

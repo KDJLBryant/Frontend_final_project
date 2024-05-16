@@ -14,11 +14,9 @@ const PageNavigator = () => {
 
 const Description = () => {
   return (
-    <div className="bg-slate-500">
-      <p className="header-card">
-        Welcome to the most elagant and high-end restaraunt around at such an affordable price; recommended by top quality chefs such as Gordam Ramsey and Carlo Cracco!
-      </p>
-    </div>
+    <h1 className="header-card">
+      Welcome to the most elagant and high-end restaraunt around at such an affordable price; recommended by top quality chefs such as Gordam Ramsey and Carlo Cracco!
+    </h1>
   )
 }
 
