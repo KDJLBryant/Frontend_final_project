@@ -27,7 +27,7 @@ const EmailSearch = () => {
             ...emptyOrder,
             email: userInput,
           };
-          setOrder(newOrder);
+          setOrder(newOrder)
           setSuccessMessage("Create new order");
         }
       }
@@ -45,11 +45,11 @@ const EmailSearch = () => {
 
   return (
     <div className="email-search-wrapper">
-      <div>
-        <p className="header-card">Search for, or make new booking!</p>
-        <label className="input-label" id="email">
-          Enter email:{" "}
-        </label>
+      <p className="header-card">Search for, or make new booking!</p>
+      <label className="input-label" id="email">
+        Enter email:
+      </label>
+      <div className="flex">
         <input
           className="email-input"
           id="email"

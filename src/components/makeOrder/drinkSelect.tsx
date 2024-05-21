@@ -32,7 +32,7 @@ const DrinkSelect = ({
   };
 
   const addToSelectedDrinks = (drinkToAdd: Drink) => {
-    if (selectedDrinks.length < 3) {
+    if (selectedDrinks.length < 3 && !selectedDrinks.find((drink) => drink.id === drinkToAdd.id)) {
       setSelectedDrinks((prevSelectedDrinks) => [
         ...prevSelectedDrinks,
         drinkToAdd,
@@ -81,13 +81,13 @@ const DrinkSelect = ({
   }, [selectedDrinks]);
 
   return (
-    order?.dish.name && (
+    order && order.dish.name && (
       <>
         <div className="drinks-display-wrapper">
           <h1 className="header-card">Select Drink</h1>
-          {drinksDisplay?.map((drink) => (
+          {drinksDisplay && drinksDisplay.map((drink) => (
             <div className="drink-item-card" key={drink.id}>
-              <p>{drink.name}</p>
+              <p>{drink.name} - £{drink.price}</p>
               <img
                 className="drink-image"
                 src={drink.imageSource}
@@ -105,7 +105,7 @@ const DrinkSelect = ({
 
         <div className="selected-drinks-wrapper">
           <h1 className="header-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</h1>
-          {selectedDrinks?.map((drink) => (
+          {selectedDrinks && selectedDrinks.map((drink) => (
             <div className="drink-item-card">
               <button
                 className="custom-button"

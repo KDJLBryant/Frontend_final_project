@@ -1,24 +1,32 @@
 "use client";
 import { useOrderContext } from "@/context/OrderContext";
 import PageRouter from "@/components/PageRouter";
-import EmailSearch from "@/components/home/emailSearch";
+import EmailSearch from "@/components/home/EmailSearch";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
-import SLIDES from "@/components/ImageCarousel/ImageCarouselData";
-import Dashboard from "@/components/dashboard";
+import SLIDES from "@/components/ImageCarousel/imageCarouselData";
+import Dashboard from "@/components/Dashboard";
 
 const PageNavigator = () => {
   const { order } = useOrderContext();
 
-  return order?.email && (<div className="page-navigator-component"><PageRouter route="/makeOrder" buttonText="Next" /></div>);
+  return (
+    order?.email && (
+      <div className="page-navigator-component">
+        <PageRouter route="/makeOrder" buttonText="Next" />
+      </div>
+    )
+  );
 };
 
 const Description = () => {
   return (
     <h1 className="header-card">
-      Welcome to the most elagant and high-end restaraunt around at such an affordable price; recommended by top quality chefs such as Gordam Ramsey and Carlo Cracco!
+      Welcome to the most elagant and high-end restaraunt around at such an
+      affordable price; recommended by top quality chefs such as Gordam Ramsey
+      and Carlo Cracco!
     </h1>
-  )
-}
+  );
+};
 
 export default function Home() {
   return (

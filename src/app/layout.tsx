@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { OrderContextProvider } from "@/context/OrderContext";
-import Dashboard from "@/components/dashboard";
-import PageHeader from "@/components/pageHeader";
+import PageHeader from "@/components/PageHeader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,9 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} layout-wrapper`}>
         <PageHeader />
-        <OrderContextProvider>
-          {children}
-        </OrderContextProvider>
+        <OrderContextProvider>{children}</OrderContextProvider>
       </body>
     </html>
   );

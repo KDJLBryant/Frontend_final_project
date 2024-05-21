@@ -38,15 +38,15 @@ const DishSelect = () => {
           <button className="custom-button" onClick={fetchDishDisplay}>
             New
           </button>
-          <img
+          {dishDisplay && <img
             className="dish-image"
-            src={dishDisplay?.imageSource}
+            src={dishDisplay.imageSource}
             alt="Dish Image"
-          />
+          />}
         </div>
         {dishDisplay && (
           <div className="dish-display-content">
-            <h1 className="header-card">{dishDisplay.name}</h1>
+            <h1 className="header-card">{dishDisplay.name} - £{dishDisplay.price}</h1>
             <p className="item-description-card">{dishDisplay.description}</p>
           </div>
         )}
@@ -56,7 +56,7 @@ const DishSelect = () => {
         <button className="custom-button" onClick={updateOrderDish}>
           Select Dish
         </button>
-        {order?.dish && (
+        {order && order.dish.id && (
           <div className="flex items-center header-card">
             <p>Selected Dish: {order.dish.name}</p>
             <img

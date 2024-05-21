@@ -1,4 +1,5 @@
 import { Dish, Drink } from "../../../orders-api/src/types";
+import { getRandomNumber } from "./getRandomNumber";
 
 const mapDish = (dataToMap: any): Dish => {
   const mappedDish: Dish = {
@@ -6,7 +7,7 @@ const mapDish = (dataToMap: any): Dish => {
     name: dataToMap.strMeal,
     description: dataToMap.strInstructions,
     imageSource: dataToMap.strMealThumb,
-    price: 5,
+    price: getRandomNumber(15, 35),
     category: dataToMap.strCategory,
     cousine: dataToMap.strArea,
   };
@@ -20,7 +21,7 @@ const mapDrink = (dataToMap: any): Drink => {
     name: dataToMap.strDrink,
     description: dataToMap.strInstructions,
     imageSource: dataToMap.strDrinkThumb,
-    price: 5,
+    price: getRandomNumber(3, 8),
     category: dataToMap.strCategory,
     brewer: dataToMap.strAlcoholic,
   };

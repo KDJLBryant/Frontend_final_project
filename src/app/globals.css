@@ -25,7 +25,7 @@
 }
 
 .success-msg {
-  @apply px-4 py-2 bg-opacity-30;
+  @apply p-4 bg-opacity-30 bg-green-500;
 }
 
 .page-navigator-component {
@@ -52,7 +52,7 @@
 }
 
 .warn-msg {
-  @apply px-4 py-2 text-center bg-opacity-30 bg-red-400;
+  @apply p-4 text-center bg-opacity-30 bg-red-400;
 }
 
 

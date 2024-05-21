@@ -1,8 +1,8 @@
 "use client";
 import PageRouter from "@/components/PageRouter";
-import DrinkSelect from "@/components/makeOrder/drinkSelect";
-import DishSelect from "@/components/makeOrder/dishSelect";
-import Dashboard from "@/components/dashboard";
+import DrinkSelect from "@/components/makeOrder/DrinkSelect";
+import DishSelect from "@/components/makeOrder/DishSelect";
+import Dashboard from "@/components/Dashboard";
 import { useState } from "react";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {

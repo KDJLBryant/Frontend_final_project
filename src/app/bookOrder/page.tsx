@@ -5,7 +5,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useOrderContext } from "@/context/OrderContext";
 import PageRouter from "@/components/PageRouter";
-import Dashboard from "@/components/dashboard";
+import Dashboard from "@/components/Dashboard";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   return (
