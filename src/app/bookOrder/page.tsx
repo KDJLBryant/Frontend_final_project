@@ -9,7 +9,7 @@ const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   return (
     <div className="page-navigator-component">
       <PageRouter route="makeOrder" buttonText="Back" />
-      {confirmedChoices && <PageRouter route="/bookOrder" buttonText="Next" />}
+      {confirmedChoices && <PageRouter route="/overview" buttonText="Next" />}
     </div>
   );
 };

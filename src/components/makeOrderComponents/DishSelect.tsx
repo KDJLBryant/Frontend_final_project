@@ -57,7 +57,7 @@ const DishSelect = () => {
           Select Dish
         </button>
         {order && order.dish.id && (
-          <div className="flex items-center header-card">
+          <div className="flex items-center justify-around header-card">
             <p>Selected Dish: {order.dish.name}</p>
             <img
               className="size-1/4 p-2"

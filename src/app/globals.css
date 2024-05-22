@@ -77,15 +77,15 @@
 }
 
 .dish-display-content {
-  @apply flex flex-col
+  @apply flex flex-col items-center
 }
 
 .dish-image {
-  @apply p-2
+  @apply size-80 p-2
 }
 
 .selected-dish-wrapper {
-  @apply flex flex-col
+  @apply flex flex-col items-center
 }
 
 /*Booktime component*/

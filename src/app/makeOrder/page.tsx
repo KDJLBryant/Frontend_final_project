@@ -18,8 +18,6 @@ const MakeOrder = () => {
   const [confirmedChoices, setConfirmedChoices] = useState(false);
 
   return (
-    // Colours just for visual debug
-    // change when designing
     <div>
       <Dashboard currentPageId={2} />
       <DishSelect />
