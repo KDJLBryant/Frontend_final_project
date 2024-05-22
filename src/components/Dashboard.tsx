@@ -38,7 +38,7 @@ const Dashboard = ({ currentPageId }: { currentPageId: number }) => {
               : "dashboard-item"
           }
         >
-          Reciept
+          Receipt
         </li>
       </ul>
     </div>

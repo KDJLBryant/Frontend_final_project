@@ -1,7 +1,7 @@
 "use client";
 import PageRouter from "@/components/PageRouter";
-import DrinkSelect from "@/components/makeOrder/DrinkSelect";
-import DishSelect from "@/components/makeOrder/DishSelect";
+import DrinkSelect from "@/components/makeOrderComponents/DrinkSelect";
+import DishSelect from "@/components/makeOrderComponents/DishSelect";
 import Dashboard from "@/components/Dashboard";
 import { useState } from "react";
 

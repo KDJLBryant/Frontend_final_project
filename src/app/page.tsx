@@ -1,7 +1,7 @@
 "use client";
 import { useOrderContext } from "@/context/OrderContext";
 import PageRouter from "@/components/PageRouter";
-import EmailSearch from "@/components/home/EmailSearch";
+import EmailSearch from "@/components/homeComponents/EmailSearch";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 import SLIDES from "@/components/ImageCarousel/imageCarouselData";
 import Dashboard from "@/components/Dashboard";
