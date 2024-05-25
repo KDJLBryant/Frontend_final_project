@@ -84,7 +84,7 @@ const DrinkSelect = ({
     order && order.dish.name && (
       <>
         <div className="drinks-display-wrapper">
-          <h1 className="header-card">Select Drink</h1>
+          <h1 className="content-card">Select Drink</h1>
           {drinksDisplay && drinksDisplay.map((drink) => (
             <div className="drink-item-card" key={drink.id}>
               <p>{drink.name} - £{drink.price}</p>
@@ -104,7 +104,7 @@ const DrinkSelect = ({
         </div>
 
         <div className="selected-drinks-wrapper">
-          <h1 className="header-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</h1>
+          <h1 className="content-card">{selectedDrinks.length > 0 ? "Chosen Drinks" : "Choose Drinks"}</h1>
           {selectedDrinks && selectedDrinks.map((drink) => (
             <div className="drink-item-card">
               <button

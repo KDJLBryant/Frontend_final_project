@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import PageRouter from "@/components/PageRouter";
 import Dashboard from "@/components/Dashboard";
 import BookTime from "@/components/bookOrderComponents/BookTime";
+import PeopleCounter from "@/components/bookOrderComponents/PeopleCounter";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   return (
@@ -16,6 +17,7 @@ const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
 
 
 
+
 const BookOrder = () => {
   const [confirmedChoices, setConfirmedChoices] = useState(false);
 
@@ -23,6 +25,7 @@ const BookOrder = () => {
     <div>
       <Dashboard currentPageId={3} />
       <BookTime setConfirmedChoices={setConfirmedChoices} />
+      <PeopleCounter setConfirmedChoices={setConfirmedChoices} />
       <PageNavigator confirmedChoices={confirmedChoices} />
     </div>
   );

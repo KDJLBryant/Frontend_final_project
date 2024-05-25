@@ -20,7 +20,7 @@ const PageNavigator = () => {
 
 const Description = () => {
   return (
-    <h1 className="header-card">
+    <h1 className="content-card">
       Welcome to the most elagant and high-end restaraunt around at such an
       affordable price; recommended by top quality chefs such as Gordam Ramsey
       and Carlo Cracco!

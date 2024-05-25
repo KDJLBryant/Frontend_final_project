@@ -26,6 +26,7 @@ const EmailSearch = () => {
           const newOrder: Order = {
             ...emptyOrder,
             email: userInput,
+            count: 1
           };
           setOrder(newOrder)
           setSuccessMessage("Create new order");
@@ -45,7 +46,7 @@ const EmailSearch = () => {
 
   return (
     <div className="email-search-wrapper">
-      <p className="header-card">Search for, or make new booking!</p>
+      <p className="content-card">Search for, or make new booking!</p>
       <label className="input-label" id="email">
         Enter email:
       </label>

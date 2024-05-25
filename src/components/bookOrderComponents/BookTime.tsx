@@ -1,11 +1,11 @@
 import { Order } from "../../../../orders-api/src/types";
-import { Dispatch, SetStateAction, useState } from "react";
+import { useState, Dispatch, SetStateAction } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useOrderContext } from "@/context/OrderContext";
 
 const BookTime = ({
-  setConfirmedChoices,
+  setConfirmedChoices
 }: {
   setConfirmedChoices: Dispatch<SetStateAction<boolean>>;
 }) => {
@@ -19,14 +19,14 @@ const BookTime = ({
       date: date,
     };
     setOrder(updatedOrder);
-    setConfirmedChoices(false);
+    setConfirmedChoices(false)
   };
 
   const today = new Date();
 
   return (
     <div className="book-time-wrapper">
-      <h1 className="header-card">Select Booking Date and Time</h1>
+      <h1 className="content-card">Select Booking Date and Time</h1>
       <DatePicker
         className="time-selector"
         selected={selectedDate}
@@ -35,7 +35,6 @@ const BookTime = ({
         minDate={today}
         dateFormat="MMMM d, yyyy h:mm aa"
       />
-      <button className="custom-button" onClick={() => setConfirmedChoices(true)}>Confirm Date</button>
     </div>
   );
 };

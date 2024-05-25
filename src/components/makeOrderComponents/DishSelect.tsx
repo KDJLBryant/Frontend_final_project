@@ -46,7 +46,7 @@ const DishSelect = () => {
         </div>
         {dishDisplay && (
           <div className="dish-display-content">
-            <h1 className="header-card">{dishDisplay.name} - £{dishDisplay.price}</h1>
+            <h1 className="content-card">{dishDisplay.name} - £{dishDisplay.price}</h1>
             <p className="item-description-card">{dishDisplay.description}</p>
           </div>
         )}
@@ -57,7 +57,7 @@ const DishSelect = () => {
           Select Dish
         </button>
         {order && order.dish.id && (
-          <div className="flex items-center justify-around header-card">
+          <div className="flex items-center justify-around content-card">
             <p>Selected Dish: {order.dish.name}</p>
             <img
               className="size-1/4 p-2"

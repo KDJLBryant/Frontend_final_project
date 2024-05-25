@@ -16,7 +16,7 @@
   @apply lg:size-1/2
 }
 
-.header-card {
+.content-card {
   @apply rounded-xl text-xl font-bold text-center p-4 my-2 text-white bg-slate-600;
 }
 
@@ -34,6 +34,10 @@
 
 .item-description-card {
   @apply rounded-xl p-2 text-sm text-white bg-slate-700
+}
+
+.arrow-button {
+  @apply border rounded-full text-4xl font-bold p-2 text-black shadow-lg shadow-black bg-white hover:bg-slate-400
 }
 
 .home-page {}
