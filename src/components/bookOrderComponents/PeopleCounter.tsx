@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useOrderContext } from "@/context/OrderContext";
 import { Order } from "../../../../orders-api/src/types";
 
@@ -25,22 +25,24 @@ const PeopleCounter = ({
   }
 
   const updateOrder = () => {
-    if (count !== order?.count) {
-      const updatedOrder: Order = {
-        ...order,
-        count: count,
-      };
-      setOrder(updatedOrder);
-      setConfirmedChoices(true);
-    }
+    const updatedOrder: Order = {
+      ...order,
+      count: count,
+    };
+    setOrder(updatedOrder);
+    setConfirmedChoices(true)
   }
+
+  useEffect(() => {
+    setConfirmedChoices(false)
+  }, [count])
 
   return (
     <div className="content-card">
       <h1 className="content-card">Set number of people</h1>
       <div className="flex justify-center items-center">
         <button className="arrow-button" onClick={decrementCount}>{'<-'}</button>
-        <p className="m-8 font-bold text-2xl">{count}</p>
+        <p className="m-8 font-bold text-4xl">{count}</p>
         <button className="arrow-button" onClick={incrementCount}>{'->'}</button>
       </div>
       <button className="custom-button" onClick={updateOrder}>Confirm booking</button>

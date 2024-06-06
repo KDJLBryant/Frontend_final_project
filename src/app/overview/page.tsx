@@ -1,4 +1,5 @@
 'use client'
+import api from "@/api/api";
 import Dashboard from "@/components/Dashboard"
 import PageRouter from "@/components/PageRouter"
 import { useOrderContext } from "@/context/OrderContext"
@@ -16,6 +17,7 @@ const PageNavigator = () => {
   );
 };
 
+
 const OrderOverview = () => {
   const { order } = useOrderContext()
 
@@ -30,6 +32,7 @@ const OrderOverview = () => {
     }
     return total
   }
+
 
   return (order &&
     <div>
@@ -50,16 +53,52 @@ const OrderOverview = () => {
         <p>Order for {order.count} people</p>
         <p>On {formatDate(new Date(order.date))}</p>
       </div>
-      <p className="content-card">Total price £{calculatePrice()}</p>
+      <div className="content-card">
+        <p>Total price £{calculatePrice()}</p>
+      </div>
     </div>
   )
 }
 
+const OrderCreator = () => {
+  const { order } = useOrderContext()
+
+  const handleOrderCreation = async () => {
+    if (order) {
+      await api.postNewOrder(order)
+    }
+  }
+
+  return (
+    <div className="content-card">
+      <button className="custom-button" onClick={handleOrderCreation}>Create</button>
+    </div>
+  )
+}
+
+const OrderUpdater = () => {
+  const { order } = useOrderContext()
+
+  const handleOrderUpdate = async () => {
+    if (order) {
+      await api.postNewOrder(order)
+    }
+  }
+
+  return (
+    <div className="content-card">
+      <button className="custom-button" onClick={handleOrderUpdate}>Update</button>
+    </div>
+  )
+}
 const Overview = () => {
+  const { orderFound } = useOrderContext()
+
   return (
     <div>
       <Dashboard currentPageId={4} />
       <OrderOverview />
+      {!orderFound ? (<OrderCreator />) : (<OrderUpdater />)}
       <PageNavigator />
     </div>
   )

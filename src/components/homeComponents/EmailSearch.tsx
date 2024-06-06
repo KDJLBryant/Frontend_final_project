@@ -7,7 +7,7 @@ import api from "@/api/api";
 
 const EmailSearch = () => {
   const emailInput = useRef<HTMLInputElement>(null);
-  const { setOrder, order } = useOrderContext();
+  const { setOrder, order, setOrderFound } = useOrderContext();
   const [successMessage, setSuccessMessage] = useState("");
 
   const searchForEmail = async () => {
@@ -16,21 +16,21 @@ const EmailSearch = () => {
     if (userInput && isValidEmail(userInput)) {
       const foundOrder = await api.getOrderFromEmail(userInput);
 
-      if (order?.email !== userInput) {
-        if (foundOrder.email) {
-          // Store found order
-          setOrder(foundOrder);
-          setSuccessMessage("User found");
-        } else {
-          // Make new order if new email
-          const newOrder: Order = {
-            ...emptyOrder,
-            email: userInput,
-            count: 1
-          };
-          setOrder(newOrder)
-          setSuccessMessage("Create new order");
-        }
+      console.log("here")
+      if (foundOrder.email) {
+        // Store found order
+        setOrder(foundOrder);
+        setOrderFound(true);
+        setSuccessMessage("User found");
+      } else {
+        // Make new order if new email
+        const newOrder: Order = {
+          ...emptyOrder,
+          email: userInput,
+          count: 1
+        };
+        setOrder(newOrder)
+        setSuccessMessage("Create new order");
       }
     } else {
       setSuccessMessage("Enter valid email!");
