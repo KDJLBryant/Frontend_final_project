@@ -32,8 +32,10 @@ export default function Home() {
   return (
     <div className="home-page">
       <Dashboard currentPageId={1} />
-      <ImageCarousel data={SLIDES} />
-      <Description />
+      <div className="lg:flex justify-around items-center">
+        <ImageCarousel data={SLIDES} />
+        <Description />
+      </div>
       <EmailSearch />
       <PageNavigator />
     </div>

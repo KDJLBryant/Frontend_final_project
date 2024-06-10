@@ -55,9 +55,24 @@ const postNewOrder = async (order: Order) => {
   }
 }
 
+const updateOrder = async (updatedOrder: Order) => {
+  const res = await fetch('http://localhost:3001/api/update-order', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(updatedOrder)
+  });
+  const data = await res.json();
+  if (!data.success) {
+    console.log(data.error)
+  }
+}
+
 export default {
   getDish,
   getDrinks,
   getOrderFromEmail,
   postNewOrder,
+  updateOrder,
 };

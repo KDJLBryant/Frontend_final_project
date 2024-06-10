@@ -48,7 +48,7 @@ const ImageCarousel = (slides: ImageCarouselProps) => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative lg:w-full">
       <IncrementButton onClick={incrementIndex} />
       {slides.data.map(
         (slide, index) =>

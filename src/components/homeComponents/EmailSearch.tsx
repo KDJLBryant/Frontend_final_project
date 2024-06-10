@@ -16,7 +16,6 @@ const EmailSearch = () => {
     if (userInput && isValidEmail(userInput)) {
       const foundOrder = await api.getOrderFromEmail(userInput);
 
-      console.log("here")
       if (foundOrder.email) {
         // Store found order
         setOrder(foundOrder);

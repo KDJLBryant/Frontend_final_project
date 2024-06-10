@@ -82,7 +82,7 @@ const DrinkSelect = ({
 
   return (
     order && order.dish.name && (
-      <>
+      <div className="lg:flex justify-around">
         <div className="drinks-display-wrapper">
           <h1 className="content-card">Select Drink</h1>
           {drinksDisplay && drinksDisplay.map((drink) => (
@@ -123,7 +123,7 @@ const DrinkSelect = ({
             </button>
           )}
         </div>
-      </>
+      </div>
     )
   );
 };
