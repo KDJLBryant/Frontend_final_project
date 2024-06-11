@@ -5,7 +5,6 @@ import EmailSearch from "@/components/homeComponents/EmailSearch";
 import ImageCarousel from "@/components/ImageCarousel/ImageCarousel";
 import SLIDES from "@/components/ImageCarousel/imageCarouselData";
 import Dashboard from "@/components/Dashboard";
-import { useState } from "react";
 
 const PageNavigator = ({ confirmedChoices }: { confirmedChoices: boolean }) => {
   const { order } = useOrderContext();
@@ -39,8 +38,8 @@ const Home = () => {
         <ImageCarousel data={SLIDES} />
         <Description />
       </div>
-      <EmailSearch setConfirmedChoices={setConfirmedChoices} />
-      <PageNavigator confirmedChoices={confirmedChoices} />
+      <EmailSearch />
+      <PageNavigator />
     </div>
   );
 }
